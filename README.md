@@ -55,6 +55,7 @@ In addition, please add the project folder to PYTHONPATH and `pip install` the f
 * ['AttributeError: 'EasyDict' object has no attribute 'iteritems''](https://github.com/tohinz/multiple-objects-gan/issues/3): in `config.py`, change to `for k, v in a.items()`
 * ['dict' object has no attribute 'has_key'](https://stackoverflow.com/questions/33727149/dict-object-has-no-attribute-has-key): in `config.py`, change to `if k not in b:`
 * [module 'torch._C' has no attribute '_cuda_setDevice'](https://github.com/pytorch/pytorch/issues/33655): you need to add `--device cpu` in the command line to make it work, so set `--gpu -1`
+* [MacOS: "AssertionError: Torch not compiled with CUDA enabled"](https://github.com/allenai/allennlp/issues/877): in `config.py`, change to `__C.CUDA = False`
 
 Examples for COCO:
  
