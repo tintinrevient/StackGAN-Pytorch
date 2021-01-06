@@ -48,12 +48,13 @@ In addition, please add the project folder to PYTHONPATH and `pip install` the f
 
 
 **Evaluating**
-- Run `python main.py --cfg cfg/coco_eval.yml --gpu 2` to generate samples from captions in COCO validation set.
+- Run `python main.py --cfg cfg/coco_eval.yml --gpu -1` to generate samples from captions in COCO validation set.
 
 **Issues**
 * [ImportError: cannot import name 'FileWriter' from 'tensorboard](https://github.com/hanzhanggit/StackGAN-Pytorch/issues/16): in `trainer.py`, change to `from tensorboardX import FileWriter`
 * ['AttributeError: 'EasyDict' object has no attribute 'iteritems''](https://github.com/tohinz/multiple-objects-gan/issues/3): in `config.py`, change to `for k, v in a.items()`
 * ['dict' object has no attribute 'has_key'](https://stackoverflow.com/questions/33727149/dict-object-has-no-attribute-has-key): in `config.py`, change to `if k not in b:`
+* [module 'torch._C' has no attribute '_cuda_setDevice'](https://github.com/pytorch/pytorch/issues/33655): you need to add `--device cpu` in the command line to make it work, so set `--gpu -1`
 
 Examples for COCO:
  
